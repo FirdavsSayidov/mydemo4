@@ -9,19 +9,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String data='';
+  String name='Dart'; int age = 33;
   Future _openDetails() async{
     Map results = await Navigator.of(context).push(new MaterialPageRoute(
       builder: (BuildContext context){
-        return new DetailPage(input:"PDP Online",);
+        return new DetailPage(input:"ButtonBack",);
       },
 
     ));
-    if(results!=null&& results.containsKey('data')){
+    if(results!=null&& results.containsKey('name')){
       setState((){
-        data = results['data'];
+        name = results['name'];
       });
-      print(results['data']);
+
     }
     else
       print("Not");
@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
             //Navigator.pushReplacementNamed(context, DetailPage.id);
           },
           color: Colors.orange,
-          child: Text(data),
+          child: Text('$name $age'),
         ),
       ),
     );
