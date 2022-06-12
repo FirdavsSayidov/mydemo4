@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:mydemo4/pages/detail_page.dart';
+import 'package:mydemo4/pages/home_page.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -11,13 +12,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+
+      title: 'FLutter ',
       theme: ThemeData(
 
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo '),
+      home: HomePage(),
+
+      routes: {
+
+        HomePage.id: (context)=>HomePage(),
+        DetailPage.id: (context)=>DetailPage()
+
+      },
     );
   }
 }
-
